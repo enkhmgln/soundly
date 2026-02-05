@@ -1,135 +1,83 @@
-# Turborepo starter
+🚀 What is Soundly?
+Soundly is a music-first social & dating app where your music taste defines who you connect with. Think Tinder meets Spotify, but also layered with features for musicians, music lovers, and content creators to truly vibe, match, and even build communities.
 
-This Turborepo starter is maintained by the Turborepo core team.
+🎯 Core Idea
+"Connect through sound. Find people who feel your playlist."
+Whether you're looking for a date, a bandmate, or just a friend to jam with, Soundly uses your music preferences to match you. It's not just swiping — it's vibing.
 
-## Using this example
+🧠 Key Features (MVP Stage)
 
-Run the following command:
+1. Music-Based Onboarding
 
-```sh
-npx create-turbo@latest
-```
+- Users sign up using Spotify, and soon, YouTube Music or SoundCloud.
+- Music preferences (top artists, genres, recent tracks) are pulled to create your audio identity.
 
-## What's inside?
+2. Matching System
 
-This Turborepo includes the following packages/apps:
+- Swipe-based UI (like Tinder).
+- Instead of just looks, you match based on:
+  - Shared artists & genres
+  - What you’re currently listening to
+  - Vibe score (algorithmic match %)
 
-### Apps and Packages
+3. Preferences Filter
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- What are you here for?
+  _ 💘 Dating
+  _ 🧑‍🤝‍🧑 Friendship \* 🎸 Band Members / Collab
+  You can switch this anytime to discover new types of connections.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+4. Chat + Music Sharing
 
-### Utilities
+- Built-in chat to connect instantly.
+- Drop songs, playlists, and talk about music in real time.
 
-This Turborepo has some additional tools already setup for you:
+5. Profile System
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Basic info + music profile.
+- Shows:
+  - Top artists
+  - Current track
 
-### Build
+6. Stripe + QPay Payments
 
-To build all apps and packages, run the following command:
+- Users can subscribe to premium tiers using Stripe (global) or QPay (Mongolia).
 
-```
-cd my-turborepo
+🔮 Coming Soon / Future Features
+🔊 Radio Rooms (Community Audio Spaces)
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
+- Join or host a live listening room where people can tune into what you’re playing.
+- Think Clubhouse + Spotify Sessions.
+- Great for artists to perform or creators to connect with fans.
+  🎥 YouTube / SoundCloud Login
+- Expand login options and let users import music taste from different platforms.
+  💎 Premium Tiers (for Creators & Musicians)
+- Verified artist profiles.
+- Upload unreleased songs/snippets.
+- Track engagement (like a mini fanbase builder).
+- Advanced analytics (who’s vibing with your tracks).
+  🧠 Emotion + Behavior Hooks
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+Mood status (set manually or auto from music tempo)
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+- Track your emotional vibe (happy, sad, chill) based on what you listen to.
+- Matches are suggested based on emotional alignment too — deep level connection.
+  🛠️ Creator Tools
+- Custom profile themes.
+- Link to your music platforms (Spotify, Apple Music, SoundCloud).
+- Paywalled content or support button for fans.
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+📱 Tech Stack
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+- Frontend: Flutter (for mobile)
+- Backend: Bun + Hono
+- Auth: JWT, Spotify
+- Payments: Stripe + QPay
+- Matching Algo: Based on selected artists
 
-### Develop
+💡 Vision
+Soundly ain’t just a dating app. It’s:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
-
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+- A music-social platform for the next gen.
+- A tool for music discovery via people.
+- A way for musicians to grow, creators to engage, and listeners to connect on something that actually matters — taste.
