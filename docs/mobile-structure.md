@@ -5,47 +5,39 @@
 Use Expo Router for navigation, keep UI in `app/`, and place shared logic
 and providers outside the route tree.
 
-## Layout (modern target + current)
+## Layout (current)
 
 ```
 apps/mobile/
   app/
     _layout.tsx
-    index.tsx
     global.css
-    (tabs)/
-      _layout.tsx
-      home.tsx
-      explore.tsx
-    auth/
-      login.tsx
-      register.tsx
-    settings/
+    (auth)/
+      splash.tsx
+    (main)/
       index.tsx
+    +not-found.tsx
   assets/
     images/
     fonts/
   components/
     layout/
       providers.tsx
+      screen.tsx
+    screens/
+      splash/
+        view.tsx
+      system/
+        not-found.tsx
     ui/
       button.tsx
       card.tsx
       text.tsx
-  features/
-    auth/
-      components/
-    users/
-      components/
   hooks/
     useDebounce.ts
     useAppState.ts
   lib/
     trpc.ts
-    api.ts
-    env.ts
-    storage.ts
-    theme.ts
     utils.ts
   constants/
   theme/
