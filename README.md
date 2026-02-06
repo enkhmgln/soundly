@@ -49,6 +49,13 @@ Whether you're looking for a date, a bandmate, or a friend to jam with, Soundly 
 
 ## Coming soon / future features
 
+### Event-based matching (not in v1)
+
+- Match people based on upcoming events in their area.
+- "Who wants to go see 'Band Name' next Friday?" is a much lower-pressure way to meet than a traditional date.
+- It solves the "what do we do?" problem immediately.
+- It shifts the focus from "dating" to "shared activity," which might actually help with retention.
+
 ### Radio rooms (community audio spaces)
 
 - Join or host a live listening room where people can tune into what you're playing.
