@@ -8,6 +8,10 @@ type ScreenProps = PropsWithChildren<{
 
 export default function Screen({ className, children }: ScreenProps) {
   return (
-    <SafeAreaView className={cn("flex-1", className)}>{children}</SafeAreaView>
+    <SafeAreaView
+      className={cn("flex-1 bg-background text-foreground", className)}
+    >
+      {children}
+    </SafeAreaView>
   );
 }
