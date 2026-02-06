@@ -9,13 +9,12 @@ export const ACCOUNT_STATUS = {
   BANNED: "banned",
 } as const;
 
-export const AUTH_PROVIDERS = ["spotify", "youtube"] as const;
-
-export const MUSIC_PROVIDERS = ["spotify", "youtube"] as const;
+export const AUTH_PROVIDERS = {
+  SPOTIFY: "spotify",
+  YOUTUBE: "youtube",
+} as const;
 
 export type AccountStatus =
   (typeof ACCOUNT_STATUS)[keyof typeof ACCOUNT_STATUS];
 
-export type AuthProvider = (typeof AUTH_PROVIDERS)[number];
-
-export type MusicProvider = (typeof MUSIC_PROVIDERS)[number];
+export type AuthProvider = (typeof AUTH_PROVIDERS)[keyof typeof AUTH_PROVIDERS];
