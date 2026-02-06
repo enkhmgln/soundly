@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "soundly-api",
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
