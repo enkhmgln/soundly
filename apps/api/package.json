@@ -1,10 +1,10 @@
 {
   "name": "soundly-api",
-  "module": "src/index.ts",
+  "module": "src/server.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "start": "bun run src/index.ts",
+    "dev": "bun run --hot src/server.ts",
+    "start": "bun run src/server.ts",
     "db:generate": "drizzle-kit generate --config src/drizzle.config.ts",
     "db:migrate": "drizzle-kit migrate --config src/drizzle.config.ts"
   },
@@ -16,9 +16,14 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@hono/trpc-server": "^0.4.2",
+    "@trpc/server": "^11.5.1",
     "drizzle-kit": "^0.31.8",
     "drizzle-orm": "^0.45.1",
     "hono": "^4.11.7",
-    "postgres": "^3.4.8"
+    "postgres": "^3.4.8",
+    "soundly-trpc": "workspace:*",
+    "superjson": "^2.2.2",
+    "zod": "^4.1.7"
   }
 }
