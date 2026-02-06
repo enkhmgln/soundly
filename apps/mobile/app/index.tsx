@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
+import { Text } from "@/components/ui/text";
 
 export default function Index() {
   const [log, setLog] = useState<string>("");
@@ -39,36 +40,21 @@ export default function Index() {
   };
 
   return (
-    <View className="flex-1 items-center justify-center bg-white px-6">
+    <View className="flex-1 items-center justify-center px-6">
       <Text className="mb-4 text-[22px] font-semibold">Users CRUD</Text>
-      <Button>
-        <Text>Click me</Text>
-      </Button>
       <View className="w-full gap-2 mb-4">
-        <Pressable
-          className="rounded-lg bg-neutral-900 py-2.5"
-          onPress={handleList}
-        >
-          <Text className="text-center font-semibold text-white">List</Text>
-        </Pressable>
-        <Pressable
-          className="rounded-lg bg-neutral-900 py-2.5"
-          onPress={handleCreate}
-        >
-          <Text className="text-center font-semibold text-white">Create</Text>
-        </Pressable>
-        <Pressable
-          className="rounded-lg bg-neutral-900 py-2.5"
-          onPress={handleUpdate}
-        >
-          <Text className="text-center font-semibold text-white">Update</Text>
-        </Pressable>
-        <Pressable
-          className="rounded-lg bg-neutral-900 py-2.5"
-          onPress={handleDelete}
-        >
-          <Text className="text-center font-semibold text-white">Delete</Text>
-        </Pressable>
+        <Button onPress={handleList}>
+          <Text className="text-center font-semibold">List</Text>
+        </Button>
+        <Button onPress={handleCreate}>
+          <Text className="text-center font-semibold">Үүсгэх</Text>
+        </Button>
+        <Button onPress={handleUpdate}>
+          <Text className="text-center font-semibold">Засварлах</Text>
+        </Button>
+        <Button onPress={handleDelete}>
+          <Text className="text-center font-semibold">Устгах</Text>
+        </Button>
       </View>
       <ScrollView className="w-full max-h-60 rounded-lg border border-neutral-200 p-3">
         <Text className="text-xs">{log || "Tap a button to call tRPC."}</Text>
