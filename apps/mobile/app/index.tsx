@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import { trpc } from "@/lib/trpc";
 
 export default function Index() {
@@ -38,67 +38,25 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Users CRUD</Text>
-      <View style={styles.buttonRow}>
-        <Pressable style={styles.button} onPress={handleList}>
-          <Text style={styles.buttonText}>List</Text>
+    <View className="flex-1 items-center justify-center bg-white px-6">
+      <Text className="mb-4 text-[22px] font-semibold">Users CRUD</Text>
+      <View className="w-full gap-2 mb-4">
+        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleList}>
+          <Text className="text-center font-semibold text-white">List</Text>
         </Pressable>
-        <Pressable style={styles.button} onPress={handleCreate}>
-          <Text style={styles.buttonText}>Create</Text>
+        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleCreate}>
+          <Text className="text-center font-semibold text-white">Create</Text>
         </Pressable>
-        <Pressable style={styles.button} onPress={handleUpdate}>
-          <Text style={styles.buttonText}>Update</Text>
+        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleUpdate}>
+          <Text className="text-center font-semibold text-white">Update</Text>
         </Pressable>
-        <Pressable style={styles.button} onPress={handleDelete}>
-          <Text style={styles.buttonText}>Delete</Text>
+        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleDelete}>
+          <Text className="text-center font-semibold text-white">Delete</Text>
         </Pressable>
       </View>
-      <ScrollView style={styles.logBox}>
-        <Text style={styles.logText}>{log || "Tap a button to call tRPC."}</Text>
+      <ScrollView className="w-full max-h-60 rounded-lg border border-neutral-200 p-3">
+        <Text className="text-xs">{log || "Tap a button to call tRPC."}</Text>
       </ScrollView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 24,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: "600",
-    marginBottom: 16,
-  },
-  buttonRow: {
-    width: "100%",
-    gap: 8,
-    marginBottom: 16,
-  },
-  button: {
-    backgroundColor: "#111",
-    paddingVertical: 10,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    textAlign: "center",
-    fontWeight: "600",
-  },
-  logBox: {
-    width: "100%",
-    maxHeight: 240,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 8,
-    padding: 12,
-  },
-  logText: {
-    fontFamily: "Menlo",
-    fontSize: 12,
-  },
-});

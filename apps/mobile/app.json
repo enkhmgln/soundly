@@ -7,6 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "soundly-mobile",
     "userInterfaceStyle": "automatic",
+    "bundler": "metro",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true

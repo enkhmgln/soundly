@@ -1,3 +1,4 @@
+import "./global.css";
 import { Stack } from "expo-router";
 import Providers from "@/components/layout/providers";
 
