@@ -1,11 +1,17 @@
 import "./global.css";
-import { Stack } from "expo-router";
 import Providers from "@/components/layout/providers";
+import { cn } from "@/lib/utils";
+import { Stack } from "expo-router";
+import { useColorScheme } from "nativewind";
+import { View } from "react-native";
 
 export default function RootLayout() {
+  const { colorScheme } = useColorScheme();
   return (
-    <Providers>
-      <Stack screenOptions={{ headerShown: false }} />
-    </Providers>
+    <View className={cn("flex-1", colorScheme === "dark" && "dark")}>
+      <Providers>
+        <Stack screenOptions={{ headerShown: false }} />
+      </Providers>
+    </View>
   );
 }
