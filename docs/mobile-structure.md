@@ -5,13 +5,14 @@
 Use Expo Router for navigation, keep UI in `app/`, and place shared logic
 and providers outside the route tree.
 
-## Suggested layout
+## Layout (modern target + current)
 
 ```
 apps/mobile/
   app/
     _layout.tsx
     index.tsx
+    global.css
     (tabs)/
       _layout.tsx
       home.tsx
@@ -30,15 +31,12 @@ apps/mobile/
     ui/
       button.tsx
       card.tsx
+      text.tsx
   features/
     auth/
       components/
-      hooks/
-      services/
     users/
       components/
-      hooks/
-      services/
   hooks/
     useDebounce.ts
     useAppState.ts
@@ -47,16 +45,27 @@ apps/mobile/
     api.ts
     env.ts
     storage.ts
+    theme.ts
+    utils.ts
   constants/
   theme/
   types/
   utils/
+  app.json
+  babel.config.js
+  components.json
+  eslint.config.js
+  metro.config.js
+  nativewind-env.d.ts
+  package.json
+  tailwind.config.js
+  tsconfig.json
 ```
 
 ## Notes
 
 - `app/` is for Expo Router screens only (no business logic).
-- Put shared providers in `components/layout/Providers.tsx` and wrap them in
+- Put shared providers in `components/layout/providers.tsx` and wrap them in
   `app/_layout.tsx`.
 - Client setup (tRPC, API clients) belongs in `lib/`.
 - Shared types live in `types/` or a shared package.
