@@ -15,6 +15,9 @@
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
+    "@tanstack/react-query": "^5.85.6",
+    "@trpc/client": "^11.5.1",
+    "@trpc/react-query": "^11.5.1",
     "expo": "~54.0.33",
     "expo-constants": "~18.0.13",
     "expo-font": "~14.0.11",
@@ -35,7 +38,9 @@
     "react-native-reanimated": "~4.1.1",
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0",
-    "react-native-web": "~0.21.0"
+    "react-native-web": "~0.21.0",
+    "soundly-trpc": "workspace:*",
+    "superjson": "^2.2.2"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
