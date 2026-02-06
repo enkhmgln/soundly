@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { trpc } from "@/lib/trpc";
+import { Button } from "@/components/ui/button";
 
 export default function Index() {
   const [log, setLog] = useState<string>("");
@@ -40,17 +41,32 @@ export default function Index() {
   return (
     <View className="flex-1 items-center justify-center bg-white px-6">
       <Text className="mb-4 text-[22px] font-semibold">Users CRUD</Text>
+      <Button>
+        <Text>Click me</Text>
+      </Button>
       <View className="w-full gap-2 mb-4">
-        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleList}>
+        <Pressable
+          className="rounded-lg bg-neutral-900 py-2.5"
+          onPress={handleList}
+        >
           <Text className="text-center font-semibold text-white">List</Text>
         </Pressable>
-        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleCreate}>
+        <Pressable
+          className="rounded-lg bg-neutral-900 py-2.5"
+          onPress={handleCreate}
+        >
           <Text className="text-center font-semibold text-white">Create</Text>
         </Pressable>
-        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleUpdate}>
+        <Pressable
+          className="rounded-lg bg-neutral-900 py-2.5"
+          onPress={handleUpdate}
+        >
           <Text className="text-center font-semibold text-white">Update</Text>
         </Pressable>
-        <Pressable className="rounded-lg bg-neutral-900 py-2.5" onPress={handleDelete}>
+        <Pressable
+          className="rounded-lg bg-neutral-900 py-2.5"
+          onPress={handleDelete}
+        >
           <Text className="text-center font-semibold text-white">Delete</Text>
         </Pressable>
       </View>
