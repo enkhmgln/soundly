@@ -1,10 +1,12 @@
 # Mobile Folder Structure (Expo + React Native)
 
 ## Goal
+
 Use Expo Router for navigation, keep UI in `app/`, and place shared logic
 and providers outside the route tree.
 
 ## Suggested layout
+
 ```
 apps/mobile/
   app/
@@ -52,6 +54,7 @@ apps/mobile/
 ```
 
 ## Notes
+
 - `app/` is for Expo Router screens only (no business logic).
 - Put shared providers in `components/layout/Providers.tsx` and wrap them in
   `app/_layout.tsx`.

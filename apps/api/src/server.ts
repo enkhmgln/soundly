@@ -27,7 +27,11 @@ app.get("/users/:id", (c) => {
 
 app.post("/users", async (c) => {
   const body = await c.req.json().catch(() => null);
-  if (!body || typeof body.name !== "string" || typeof body.email !== "string") {
+  if (
+    !body ||
+    typeof body.name !== "string" ||
+    typeof body.email !== "string"
+  ) {
     return c.json({ error: "Invalid payload" }, 400);
   }
   const user = userStore.create({ name: body.name, email: body.email });
@@ -37,7 +41,11 @@ app.post("/users", async (c) => {
 app.put("/users/:id", async (c) => {
   const id = Number(c.req.param("id"));
   const body = await c.req.json().catch(() => null);
-  if (!body || typeof body.name !== "string" || typeof body.email !== "string") {
+  if (
+    !body ||
+    typeof body.name !== "string" ||
+    typeof body.email !== "string"
+  ) {
     return c.json({ error: "Invalid payload" }, 400);
   }
   const updated = userStore.update(id, {

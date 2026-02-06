@@ -72,7 +72,9 @@ const t = initTRPC.context<Context>().create({
 export const appRouter = t.router({
   user: t.router({
     list: t.procedure.query(() => userStore.list()),
-    get: t.procedure.input(z.number()).query(({ input }) => userStore.get(input)),
+    get: t.procedure
+      .input(z.number())
+      .query(({ input }) => userStore.get(input)),
     create: t.procedure
       .input(z.object({ name: z.string().min(1), email: z.string().min(1) }))
       .mutation(({ input }) => userStore.create(input)),
