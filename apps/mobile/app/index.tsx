@@ -6,10 +6,10 @@ import { Text } from "@/components/ui/text";
 
 export default function Index() {
   const [log, setLog] = useState<string>("");
-  const listQuery = trpc.user.list.useQuery(undefined, { enabled: false });
-  const createUser = trpc.user.create.useMutation();
-  const updateUser = trpc.user.update.useMutation();
-  const deleteUser = trpc.user.delete.useMutation();
+  const listQuery = trpc.users.list.useQuery(undefined, { enabled: false });
+  const createUser = trpc.users.create.useMutation();
+  const updateUser = trpc.users.update.useMutation();
+  const deleteUser = trpc.users.delete.useMutation();
 
   const handleList = async () => {
     const result = await listQuery.refetch();
